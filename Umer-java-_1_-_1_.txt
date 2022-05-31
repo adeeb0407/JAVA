@@ -1,5 +1,43 @@
 https://github.com/shubhamdsk/java-TYBCS-practical-Assignments-with-Solution
 
+--------------------------------------------------------------STRING ----------------------
+
+package com.example.demo;
+
+import java.util.Date;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Trial {
+	@RequestMapping("/string")
+	public String show() {
+		
+		return "Enter the Val";
+	}
+}
+
+
+-----------------------------------------------------------------Dates-------
+package com.example.demo;
+
+import java.util.Date;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Trial {
+	@RequestMapping("/dates")
+	public Date show() {
+		
+		return new Date();
+	}
+}
+
+---------------------------------------------------------------------------
+
     <servlet>
         <servlet-name>comingsoon</servlet-name>
         <servlet-class>mysite.server.ComingSoonServlet</servlet-class>
@@ -9,6 +47,8 @@ https://github.com/shubhamdsk/java-TYBCS-practical-Assignments-with-Solution
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
 </web-app>
+
+----------------------------------------------------------------------------------------
 
 Set-A: -
 Qa) Write a java program to accept names of 'n' cities, insert same into array list collection and display the contents of same array list, also remove all these elements.
