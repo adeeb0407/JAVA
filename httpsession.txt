@@ -1,0 +1,130 @@
+//pg1html
+
+
+<form action="http://localhost:8080/formsur/pgtwo">
+username<input type="text" name="user"></input>
+pass<input type="text" name="pass"></input>
+submit<input type="submit" name="ok"></input>
+
+
+
+
+
+
+
+//file name=pgtwo.java
+response.getWriter().append("Served at: ").append(request.getContextPath());
+		PrintWriter out=response.getWriter();
+		HttpSession hs=request.getSession(true);
+		String usern=request.getParameter("user");
+		String passw=request.getParameter("pass");
+		int i=+1;
+		hs.setAttribute("totalpg", i);
+		if((usern.equals("nabeel")&&passw.equals("abcd")))
+		{
+			
+			response.setContentType("text/html");
+			out.println("success click submit to puchase");
+			//out.println("<form action= http://localhost:8080/formsur/pgthree.html><input type=submit name=ok></input></form>");
+			//out.println(hs);
+			response.sendRedirect("pg2ht.html");
+			
+		}
+		else {
+			out.println("fail");
+		}
+	}
+
+}
+
+
+
+
+
+
+filename=pg2ht.html
+<form action="http://localhost:8080/formsur/pg1htdata">
+<input type="checkbox" name="item" value="100">book-100</input>
+<input type="checkbox" name="item" value="200">pen-200</input>
+<input type="checkbox" name="item" value="300">kit-300</input>
+<input type="submit" name="ok" ></input>
+
+
+
+
+
+
+
+filename=pg1htdata
+response.getWriter().append("Served at: ").append(request.getContextPath());
+		PrintWriter out=response.getWriter();
+		HttpSession hs=request.getSession(true);
+		response.setContentType("text/html");
+		String[] pgonedata=request.getParameterValues("item");
+		int sum=0;
+		
+		if(pgonedata!=null)
+		{
+			for(int i=0;i<pgonedata.length;i++) {
+			sum=sum+Integer.parseInt(pgonedata[i]);
+			}
+			hs.setAttribute("total", sum);
+			response.sendRedirect("NewFile.html");
+			//out.println("<form action= http://localhost:8080/formsur/pg3ht.html><input type=submit name=ok></input></form>");
+			
+			
+			
+			
+			
+		}
+			
+	}
+
+
+
+
+
+filename=pg3ht.html
+<form action="http://localhost:8080/formsur/finaldata" >
+<input type="checkbox" name="item" value="1000">bag-1000</input>
+<input type="checkbox" name="item" value="2000">courses-2000</input>
+<input type="checkbox" name="item" value="3000">vedios-3000</input>
+
+<input type="submit" name="ok" ></input>
+
+</form>
+
+
+
+
+filename=finaldata.java
+PrintWriter out=response.getWriter();
+		HttpSession hs=request.getSession(true);
+		String second[]=request.getParameterValues("item");
+		int sum2=0;
+		if(second!=null) {
+			for(int i=0;i<second.length;i++) {
+				sum2=sum2+Integer.parseInt(second[i]);
+				
+			}
+			int s1=((Integer)hs.getAttribute("total")).intValue();
+			out.println("<html>");
+			out.println("<body>");
+			out.println("total of pg 1="+s1);
+			out.println("total of pg 2="+sum2);
+			int total=s1+sum2;
+			out.println("total bill="+total);
+			
+		}
+		
+	}
+
+}
+
+
+
+
+
+
+
+
