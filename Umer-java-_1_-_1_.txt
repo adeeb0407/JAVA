@@ -1,5 +1,29 @@
 https://github.com/shubhamdsk/java-TYBCS-practical-Assignments-with-Solution
 
+---------------------------------------------------------JDBC Driver -------------------------
+
+//package practicalCourse;
+import java.sql.*;
+
+public class connect {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		  try {
+	            Connection connection = null;
+	            Class.forName("org.postgresql.Driver");
+	            
+	            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/psotgres", "postgres", "");
+	            
+	            System.out.println("Connection established successfully");
+	        } catch (Exception e) {
+	            System.out.print("error: \n" + e.toString() + "\n" + e.getMessage());
+	        }
+	}
+
+}
+
+
 --------------------------------------------------------------STRING ----------------------
 
 package com.example.demo;
