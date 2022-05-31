@@ -150,40 +150,41 @@ Enter	2	Number:
 
 Qb) Write a program to sort HashMap by keys and display the details before sorting and after sorting.
 
-import java.util.*;
-class B2
-{
-public static void main(String args[])
-{
-HashMap m=new HashMap();
-m.put("ravi",700);
-m.put("Veeni",900);
-m.put("Reena",100);
-m.put("raj",400);
-System.out.println("befor Sorting");
-System.out.println(m);
-System.out.println("After Sorting");
-System.out.println(m);
-TreeMap t=new TreeMap(m);
-Iterator i=t.keySet().iterator();
-while(i.hasNext())
-{
-String k=(String)i.next();
-System.out.println(k);
-}
-}
-}
-
-Output:-
-java B2
-befor Sorting
-{raj=400, Reena=100, Veeni=900, ravi=700}
-After Sorting
-{raj=400, Reena=100, Veeni=900, ravi=700}
-Reena
-Veeni
-raj
-ravi
+import java.util.Map;  
+import java.util.HashMap;  
+import java.util.TreeMap;  
+import java.util.Iterator;  
+public class SumThread  
+{  
+public static void main(String args[])  
+{  
+//implementation of HashMap  
+HashMap<Integer, String> hm=new HashMap<Integer, String>();  
+//addding keys and values to HashMap  
+hm.put(23, "Yash");  
+hm.put(17, "Arun");  
+hm.put(15, "Swarit");  
+hm.put(9, "Neelesh");  
+Iterator <Integer> it = hm.keySet().iterator();         
+System.out.println("Before Sorting");  
+while(it.hasNext())  
+{  
+int key=(int)it.next();  
+System.out.println("Roll no:  "+key+"     name:   "+hm.get(key));  
+}  
+System.out.println("\n");  
+Map<Integer, String> map=new HashMap<Integer, String>();  
+System.out.println("After Sorting");  
+//using TreeMap constructor to sort the HashMap  
+TreeMap<Integer,String> tm=new  TreeMap<Integer,String> (hm);  
+Iterator itr=tm.keySet().iterator();               
+while(itr.hasNext())    
+{    
+int key=(int)itr.next();  
+System.out.println("Roll no:  "+key+"     name:   "+hm.get(key));  
+}    
+}  
+}  
 
 
 Qc) Write a program that loads names and phone numbers from a text file where the data is organized as one line per record and each field in a record are separated by a tab (\t).it takes a name or phone number as input and prints the corresponding other value from the hash table (hint: use hash tables)
