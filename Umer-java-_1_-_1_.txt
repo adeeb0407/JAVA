@@ -1,7 +1,4 @@
-Name:- Umer Parvez Ansari
-Class:- T.Y.B.SC(Comp.Sci)
-RollNo:-248
-Assignment-1: - Collections
+https://github.com/shubhamdsk/java-TYBCS-practical-Assignments-with-Solution
 
 Set-A: -
 Qa) Write a java program to accept names of 'n' cities, insert same into array list collection and display the contents of same array list, also remove all these elements.
