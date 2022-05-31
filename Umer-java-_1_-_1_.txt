@@ -1,5 +1,15 @@
 https://github.com/shubhamdsk/java-TYBCS-practical-Assignments-with-Solution
 
+    <servlet>
+        <servlet-name>comingsoon</servlet-name>
+        <servlet-class>mysite.server.ComingSoonServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>comingsoon</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+</web-app>
+
 Set-A: -
 Qa) Write a java program to accept names of 'n' cities, insert same into array list collection and display the contents of same array list, also remove all these elements.
 
