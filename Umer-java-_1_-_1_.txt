@@ -1029,6 +1029,17 @@ class B2{
 
 
 Assignment:4- Servlets and JSP
+
+
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+
+		PrintWriter out=response.getWriter();
+		
+		out.println(request.getHeader("User-Agent"));
+		out.println(request.getHeader("X-FORWARDED-FOR"));
+		out.println(request.getServerName());
+		
+		
 Set-A
  a) Design a servlet that provides information about a HTTP request from a client, such as IP address and browser type. The servlet also provides information about the server on which the servlet is running, such as the operating system type, and the names of currently loaded servlets. 
 import java.io.IOException;
